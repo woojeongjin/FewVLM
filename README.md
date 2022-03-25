@@ -14,18 +14,23 @@ python -c "import language_evaluation; language_evaluation.download('coco')"
 
 ## Datasets
 
-- We use VL-T5's datasets 
+- In progress
 - For manual feature extraction, please refer to [VL-T5 repository](https://github.com/j-min/VL-T5/tree/main/feature_extraction).
 
-## Pre-trainced checkpoints
+## Pre-trained checkpoints
+
+- In progress
 
 ## Pre-training
 
 ```bash
-bash scripts/pretrain.sh 2 
+# Pre-train with 8 GPUs
+bash scripts/pretrain.sh 8 
 ```
 
 ## Zero/few-shot Learning
+
+All commands are runnable on a single GPU.
 
 ### VQA
 
@@ -57,7 +62,6 @@ bash scripts/GQA.sh 0 GQA --subsample --dataseed 42 --num_data 16 --test_only --
 bash scripts/GQA.sh 0 GQA --test_only --prompt 3
 ```
 
-
 ### Flickr30k
 
 ```bash
@@ -78,20 +82,17 @@ bash scripts/nocaps.sh 0 nocaps --subsample --dataseed 42 --num_data 16 --prefix
 bash scripts/nocaps.sh 0 nocaps --prefix image --test_only 
 ```
 
-
-
-
 Some important command line arguments are listed as follows:
 
 | Arg                             | Values                                                     | Description                      | Notes                                                        |
 | ------------------------------- | ---------------------------------------------------------- | -------------------------------- | ------------------------------------------------------------ |
-| `--load`                        | path for trained checkpoints                                         | load a checkpoint           |                                                                                               |
-| `--dataseed`                    | {0, 42, 9595,...}                                           | Random seed for data shuffling                         | default=42                                                  |
-| `--seed`                        | {0, 42, 9595,...}                                           | Random seed for parameter shuffling                         | default=9595                                                |
-| `--subsample`                   | store_true                                                  | Subsample train and val sets for few-shot learning                          |                                                             |
-| `--num_data`                    | {16, 40, ...}                                               | Number of subsamples for train and val sets                              | default=16                                                  |
-| `--test_only`                   | store_true                                                  | Run test without training               |                          |
-| `--prompt`                     | {0, 1, 2, 3}                                                 | Prompt for VQA               | default=0, 0: no prompt, 1: '[Q] <text_1>', 2: 'question: [Q] answer:', 3: 'question: [Q] answer: <text_1>'         |
-| `--prefix`                       | {None, 'image', 'picture', 'photo'}                                         | Prompt for captioning          | Default=None, 'image': 'an image of', 'picture': 'a picture of', 'photo': 'a photo of' |
-| `--backbone`                    | {'t5-base', 't5-large'}                             | Backbone architecture               | default='t5-base' |
+| `--load`                        | path for trained checkpoints                               | load a checkpoint                |                                                              |
+| `--dataseed`                    | {0, 42, 9595,...}                                          | Random seed for data shuffling   | default=42                                                   |
+| `--seed`                        | {0, 42, 9595,...}                                          | Random seed for parameter shuffling | default=9595                                              |
+| `--subsample`                   | store_true                                                 | Subsample train and val sets for few-shot learning  |                                           |
+| `--num_data`                    | {16, 40, ...}                                              | Number of subsamples for train and val sets | default=16                                        |
+| `--test_only`                   | store_true                                                 | Run test without training        |                                                              |
+| `--prompt`                      | {0, 1, 2, 3}                                               | Prompts for VQA                  | default=0, 0: no prompt, 1: '[Q] <text_1>', 2: 'question: [Q] answer:', 3: 'question: [Q] answer: <text_1>'         |
+| `--prefix`                      | {None, 'image', 'picture', 'photo'}                        | Prompts for captioning           | Default=None, 'image': 'an image of', 'picture': 'a picture of', 'photo': 'a photo of' |
+| `--backbone`                    | {'t5-base', 't5-large'}                                    | Backbone architecture            | default='t5-base'                                            |
 
