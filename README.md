@@ -15,7 +15,7 @@ python -c "import language_evaluation; language_evaluation.download('coco')"
 ## Datasets
 
 - Datasets can be downloaded from [Google Drive](https://drive.google.com/drive/folders/1T8x5O3sZp83_x9XX2Yg0HgCP8P_Bh8KD?usp=sharing)
-- For other datasets, please refer to [VL-T5 repository](https://github.com/j-min/VL-T5/tree/main/feature_extraction).
+- For other datasets, we used datasets from VL-T5 repository. Please refer to [VL-T5 repository](https://github.com/j-min/VL-T5/tree/main/feature_extraction) for download.
 
 ## Pre-trained checkpoints
 
