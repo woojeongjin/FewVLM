@@ -19,7 +19,7 @@ python -c "import language_evaluation; language_evaluation.download('coco')"
 
 ## Pre-trained checkpoints
 
-- [Base](https://drive.google.com/file/d/17B-3TcXJ1tumNPYAQpg2MisSi9-7Dz-Y/view?usp=sharing), [Large](https://drive.google.com/file/d/1Y80nD_FYAs5Gs2mbR_xcshEBTowh6t8I/view?usp=sharing)
+- We released the pre-trained checkpoints: [base](https://drive.google.com/file/d/17B-3TcXJ1tumNPYAQpg2MisSi9-7Dz-Y/view?usp=sharing) and [large](https://drive.google.com/file/d/1Y80nD_FYAs5Gs2mbR_xcshEBTowh6t8I/view?usp=sharing)
 
 ## Pre-training
 
